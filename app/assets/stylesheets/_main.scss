@@ -1,0 +1,76 @@
+.main {
+  height: 100vh;
+  width: calc(100% - 250px);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #4f4f4f;
+    
+    .nav {
+      display: flex;
+
+      .ragistation {
+        height: 40px;
+        width: 90px;
+        background-color: #ffffff;
+        margin-left: 15px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 10px;
+        &:hover {
+          background-color: #fce197;
+        }
+      }
+    }
+    .right {
+      height: 40px;
+      width: 100px;
+      margin: 0px 15px 0px 15px;
+      text-align: center;
+
+      &__name {
+        font-size: 8px;
+        color: #efefef;
+        margin-bottom: 3px;
+      }
+      &__signout {
+        font-size: 14px;
+        color: #ffffff;
+      }
+    }
+  }
+  &__body {
+    height: calc(100vh - 60px);
+    width: 100%;
+    overflow: auto;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: #efefef;
+
+    table {
+      table-layout: fixed;
+      min-width: 100%;
+      background-color: #ffffff;
+
+      tr {
+        width: 120px;
+        min-width: 120px;
+
+        th {
+          width: 120px;
+          min-width: 120px;
+          border: solid 1px black;
+          text-align: center;
+        }
+
+        #short {
+          width: 80px;
+          min-width: 80px;
+        }
+      }
+    } 
+  }
+}

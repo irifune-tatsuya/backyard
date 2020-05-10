@@ -1,0 +1,43 @@
+.side
+  .side__header
+    %form.side__header__content
+      %input{type: "text", placeholder: "社員の検索", class: "text"}
+      %label{class: "btn"}
+        %input{type: "submit", class: "btn--icon"}
+        = icon('fas', 'search')
+    %end
+  .side__lists
+    .list
+      .list__name 博多支店
+      .list__count 従業員：20名
+    .list
+      .list__name 天神支店
+      .list__count 従業員：18名
+    .list
+      .list__name 赤坂支店
+      .list__count 従業員：5名
+    .list
+      .list__name 博多支店
+      .list__count 従業員：20名
+    .list
+      .list__name 天神支店
+      .list__count 従業員：18名
+    .list
+      .list__name 赤坂支店
+      .list__count 従業員：5名
+    .list
+      .list__name 博多支店
+      .list__count 従業員：20名
+    .list
+      .list__name 天神支店
+      .list__count 従業員：18名
+    .list
+      .list__name 赤坂支店
+      .list__count 従業員：5名
+  .side__nav
+    .delete 消化履歴
+    .links
+      = link_to "#", class: "link" do
+        有給休暇届
+      = link_to "https://www.mhlw.go.jp/shingi/2004/04/s0428-7b2a.html", class: "link" do
+        関連サイト
