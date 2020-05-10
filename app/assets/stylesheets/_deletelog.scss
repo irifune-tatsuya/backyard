@@ -1,0 +1,37 @@
+.logs__body {
+  height: calc(100vh - 60px);
+  width: 100%;
+  overflow: auto;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: #efefef;
+
+  .log {
+    background-color: #fce197;
+    padding: 10px;
+    border-radius: 10px;
+    width: 400px;
+    margin: 20px auto;
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: #4f4f4f;
+
+      .left {
+        display: flex;
+        &__text {
+          font-size: 12px;
+          color: #4f4f4f;
+        }
+      }
+    }
+
+    &__low {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+  }
+}
