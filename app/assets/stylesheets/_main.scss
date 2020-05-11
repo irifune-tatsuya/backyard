@@ -36,9 +36,10 @@
         color: #efefef;
         margin-bottom: 3px;
       }
-      &__signout {
+      &__signout--link {
         font-size: 14px;
         color: #ffffff;
+        text-decoration: none;
       }
     }
   }
@@ -49,7 +50,6 @@
     padding: 5px;
     box-sizing: border-box;
     background-color: #efefef;
-    // 省略
 
     table {
       table-layout: fixed;

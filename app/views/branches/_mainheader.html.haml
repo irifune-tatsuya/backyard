@@ -4,5 +4,7 @@
     .ragistation 社員登録
     .ragistation 消化登録
   .right
-    .right__name ユーザー名
-    .right__signout ログアウト
+    .right__name
+      = current_user.name
+    .right__signout
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'right__signout--link'
