@@ -7,33 +7,15 @@
         = icon('fas', 'search')
     %end
   .side__lists
-    .list
-      .list__name 博多支店
-      .list__count 従業員：20名
-    .list
-      .list__name 天神支店
-      .list__count 従業員：18名
-    .list
-      .list__name 赤坂支店
-      .list__count 従業員：5名
-    .list
-      .list__name 博多支店
-      .list__count 従業員：20名
-    .list
-      .list__name 天神支店
-      .list__count 従業員：18名
-    .list
-      .list__name 赤坂支店
-      .list__count 従業員：5名
-    .list
-      .list__name 博多支店
-      .list__count 従業員：20名
-    .list
-      .list__name 天神支店
-      .list__count 従業員：18名
-    .list
-      .list__name 赤坂支店
-      .list__count 従業員：5名
+    - current_user.branches.each do |branch|
+      .list
+        = link_to branch_employees_path(branch), class: "list__link" do
+          .list__name
+            = branch.name 
+          .list__count
+            %span 従業員：
+            = branch.employees.count
+            %span 名
   .side__nav
     .delete 消化履歴
     .links

@@ -1,4 +1,8 @@
 class EmployeesController < ApplicationController
+  def index
+    @employees = Employee.where(branch_id: params[:branch_id])
+  end
+  
   def new
     @employee = Employee.new
   end
