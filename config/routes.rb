@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'branches#index'
+  root 'branches#index'
   resources :branches, only: [:new, :create] do
-    resources :employees, only: [:index, :create]
+    resources :employees, only: [:index]
   end
-  resources :employees, only: :new
+  resources :employees, only: [:new, :create]
 end
