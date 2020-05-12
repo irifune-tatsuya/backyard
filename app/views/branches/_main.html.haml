@@ -22,9 +22,9 @@
             %th
               =employee.hire_date.strftime("%Y/%m/%d")
             %th{id: "short"}
-              = employee.calculate_grant_day
+              = employee.calculate_grant_date
             %th{id: "short"}
-              0.5年
+              = employee.calculate_year_of_service
             %th{id: "short"}
               10
             %th{id: "short"}
