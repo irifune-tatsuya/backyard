@@ -40,12 +40,12 @@ ActiveRecord::Schema.define(version: 2020_05_10_050210) do
     t.integer "delete_day"
     t.string "reason", default: "法定付与日のため", null: false
     t.bigint "user_id"
-    t.bigint "employees_id"
+    t.bigint "employee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["add_day"], name: "index_holidays_on_add_day"
     t.index ["delete_day"], name: "index_holidays_on_delete_day"
-    t.index ["employees_id"], name: "index_holidays_on_employees_id"
+    t.index ["employee_id"], name: "index_holidays_on_employee_id"
     t.index ["user_id"], name: "index_holidays_on_user_id"
   end
 
@@ -65,6 +65,6 @@ ActiveRecord::Schema.define(version: 2020_05_10_050210) do
 
   add_foreign_key "branches", "users"
   add_foreign_key "employees", "branches"
-  add_foreign_key "holidays", "employees", column: "employees_id"
+  add_foreign_key "holidays", "employees"
   add_foreign_key "holidays", "users"
 end

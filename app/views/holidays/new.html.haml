@@ -1,0 +1,26 @@
+.holiday__body
+  #{@branch_name}の有給消化登録
+  .holiday__body__form
+    = form_for @holiday, url: branch_holidays_path do |f|
+      .field
+        .field-label
+          = f.label "社員名"
+        .field-input
+          = f.collection_select :employee_id, Employee.where(branch_id: @branch), :id, :name, include_blank: "選択して下さい"
+      .field
+        .field-label
+          = f.label "付与日数"
+        .field-input
+          = f.number_field :add_day, max: "10", min: "0"
+      .field
+        .field-label
+          = f.label "消化日数"
+        .field-input
+          = f.number_field :delete_day, max: "10", min: "0"
+      .field
+        .field-label
+          = f.label "付与または消化理由"
+        .field-input
+          = f.text_field :reason, autofocus: true
+      .actions
+        = f.submit "登録", class: 'btn'

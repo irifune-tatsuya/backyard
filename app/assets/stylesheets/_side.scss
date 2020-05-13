@@ -88,6 +88,11 @@
       &:hover {
         background-color: #fce197;
       }
+      
+      &__link {
+        text-decoration: none;
+        color: black;
+      }
     }
     .links {
       display: flex;
