@@ -10,6 +10,16 @@
     box-sizing: border-box;
     background-color: #efefef;
 
+    &__guide {
+      width: 350px;
+      height: 110px;
+      background-color: #4f4f4f;
+      color: #fce197;
+      margin:30px auto auto;
+      padding: 15px;
+      font-size: 12px;
+    }
+
     table {
       table-layout: fixed;
       min-width: 100%;
