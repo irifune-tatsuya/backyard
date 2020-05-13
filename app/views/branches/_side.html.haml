@@ -16,8 +16,13 @@
             %span 従業員：
             = branch.employees.count
             %span 名
+      .delete
+        = link_to new_branch_holiday_path(branch), class: "list__link" do
+          消化登録
   .side__nav
-    .delete 消化履歴
+    .delete
+      = link_to holidays_path, class: "delete__link" do
+        消化履歴
     .links
       = link_to "#", class: "link" do
         有給休暇届

@@ -20,7 +20,7 @@
             %th
               = employee.name
             %th
-              =employee.hire_date.strftime("%Y/%m/%d")
+              = employee.hire_date.strftime("%Y/%m/%d")
             %th{id: "short"}
               = employee.calculate_grant_date
             %th{id: "short"}
@@ -28,6 +28,6 @@
             %th{id: "short"}
               10
             %th{id: "short"}
-              2
+              = employee.total_delete_day
             %th{id: "short"}
               8

@@ -12,13 +12,18 @@ class Employee < ApplicationRecord
 
   def calculate_year_of_service
     year = Date.today.year - hire_date.year
-    
     if 0 < Date.today.month - hire_date.month
       month = Date.today.month - hire_date.month
     else
       month = Date.today.month - hire_date.month + 12
     end
-
     "#{year}年#{month}ヵ月"
   end
+
+  def total_delete_day
+    sum = holidays.sum(:delete_day)
+    "#{sum}"
+  end
+
+
 end

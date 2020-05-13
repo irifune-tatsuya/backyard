@@ -1,6 +1,6 @@
 class EmployeesController < ApplicationController
   def index
-    @employees = Employee.where(branch_id: params[:branch_id])
+    @employees = Employee.where(branch_id: params[:branch_id]).includes(:holidays)
   end
   
   def new
