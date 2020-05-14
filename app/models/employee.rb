@@ -39,7 +39,7 @@ class Employee < ApplicationRecord
   end
 
   def last_add_day
-    if (all_add_day = holidays.where.not(add_day: nil)).present?
+    if holidays.where.not(add_day: nil).present?
       all_add_day = holidays.where.not(add_day: nil).pluck(:add_day)
       all_add_day.last
     else
