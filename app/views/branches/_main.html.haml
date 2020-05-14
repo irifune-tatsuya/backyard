@@ -17,7 +17,9 @@
           消化日数
         %th{id: "short"}
           残日数
-        %th{id: "veryshort"}
+        %th{id: "veryshort", class: "bgc"}
+          5日
+        %th{id: "short"}
         - @employees.each do |employee|
           %tr
             %th
@@ -35,6 +37,8 @@
               = employee.total_delete_day
             %th{id: "short"}
               = employee.calculate_remaining_days
+            %th{id: "short", class: "bgc"}
+              = employee.delete_days_alert
             %th{id: "veryshort" }
               = link_to employee_path(employee.id), class: "link", method: :delete do
                 削除

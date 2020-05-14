@@ -34,7 +34,7 @@ class Employee < ApplicationRecord
     else
       grant_date_this_year
     end
-    range_to_delete = holidays.where(created_at: grant_date_this_year..Date.today)
+    range_to_delete = holidays.where(created_at: grant_date_this_year..Date.tomorrow)
     range_to_delete.sum(:delete_day)
   end
 
@@ -52,4 +52,14 @@ class Employee < ApplicationRecord
     b = last_add_day
     b - a
   end
+
+  def delete_days_alert
+    days = total_delete_day
+    if days >= 5
+      "-"
+    else
+      "未消化"
+    end
+  end
+
 end
