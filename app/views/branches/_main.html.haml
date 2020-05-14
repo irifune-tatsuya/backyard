@@ -3,11 +3,13 @@
   .main__body
     %table 
       %tr
-        %th 氏名
+        %th
+          氏名
+          = icon('fas', 'cog')
         %th 入社日
         %th{id: "short"}
           付与日
-        %th{id: "short"}
+        %th
           勤続年数
         %th{id: "short"}
           取得日数
@@ -15,15 +17,17 @@
           消化日数
         %th{id: "short"}
           残日数
+        %th{id: "veryshort"}
         - @employees.each do |employee|
           %tr
             %th
-              = employee.name
+              = link_to edit_employee_path(employee.id), class: "link" do
+                = employee.name
             %th
               = employee.hire_date.strftime("%Y/%m/%d")
             %th{id: "short"}
               = employee.calculate_grant_date
-            %th{id: "short"}
+            %th
               = employee.calculate_year_of_service
             %th{id: "short"}
               = employee.last_add_day
@@ -31,3 +35,6 @@
               = employee.total_delete_day
             %th{id: "short"}
               = employee.calculate_remaining_days
+            %th{id: "veryshort" }
+              = link_to employee_path(employee.id), class: "link", method: :delete do
+                削除

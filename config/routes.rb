@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     resources :holidays, only: [:new, :create]
   end
   resources :holidays, only: :index
-  resources :employees, only: [:new, :create]
+  resources :employees, only: [:new, :create, :edit, :update, :destroy]
 end

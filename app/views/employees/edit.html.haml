@@ -1,0 +1,26 @@
+.employee__body
+  #{@employee.name}さんの編集
+  .employee__body__form
+    = form_for @employee do |f|
+      .field
+        .field-label
+          = f.label "名前"
+        .field-input
+          = f.text_field :name, autofocus: true
+      .field
+        .field-label
+          = f.label "雇用形態"
+        .field-input
+          = f.select :employment_status, [["フルタイム", "1"],["パートタイム", "2"]], include_blank: "選択して下さい"
+      .field
+        .field-label
+          = f.label "入社日"
+        .field-input
+          = f.date_select :hire_date
+      .field
+        .field-label
+          = f.label "所属支店"
+        .field-input
+          = f.collection_select :branch_id, Branch.where(user_id: current_user.id), :id, :name, include_blank: "選択して下さい"
+      .actions
+        = f.submit "登録", action: :create, class: 'btn'
