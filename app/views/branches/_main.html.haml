@@ -10,7 +10,7 @@
         %th{id: "short"}
           勤続年数
         %th{id: "short"}
-          繰越日数
+          取得日数
         %th{id: "short"}
           消化日数
         %th{id: "short"}
@@ -26,8 +26,8 @@
             %th{id: "short"}
               = employee.calculate_year_of_service
             %th{id: "short"}
-              未実装
+              = employee.last_add_day
             %th{id: "short"}
               = employee.total_delete_day
             %th{id: "short"}
-              未実装
+              = employee.calculate_remaining_days
