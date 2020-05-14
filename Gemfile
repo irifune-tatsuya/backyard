@@ -65,3 +65,4 @@ gem 'devise'
 gem 'mini_racer'
 gem "font-awesome-sass"
 gem 'pry-rails'
+gem "jquery-rails"
