@@ -11,7 +11,7 @@ class Employee < ApplicationRecord
   end
 
   def calculate_year_of_service
-    if Date.today.month - hire_date.month > 0
+    if Date.today.month - hire_date.month >= 0
       year = Date.today.year - hire_date.year
       month = Date.today.month - hire_date.month
     else

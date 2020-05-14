@@ -34,13 +34,23 @@
           min-width: 120px;
           border: solid 1px black;
           text-align: center;
+          }
         }
-
         #short {
           width: 80px;
           min-width: 80px;
         }
+        #veryshort{
+          width: 50px;
+          min-width: 50px;
+        }
+        .link {
+          text-decoration: none;
+          color: black;
+          &:hover {
+            color: red;
+          }
+        }
       }
     } 
   }
-}

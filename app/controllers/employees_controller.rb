@@ -12,6 +12,22 @@ class EmployeesController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @employee = Employee.find(params[:id])
+  end
+
+  def update
+    employee = Employee.find(params[:id])
+    employee.update(employee_params)
+    redirect_to root_path
+  end
+
+  def destroy
+    employee = Employee.find(params[:id])
+    employee.destroy
+    redirect_to root_path
+  end
+
   private
   def employee_params
     params.require(:employee).permit(:name, :employment_status, :hire_date, :branch_id)
