@@ -12,6 +12,22 @@ class BranchesController < ApplicationController
     Branch.create(branch_params)
     redirect_to root_path
   end
+
+  def edit
+    @branch = Branch.find(params[:id])
+  end
+
+  def update
+    branch = Branch.find(params[:id])
+    branch.update(branch_params)
+    redirect_to root_path
+  end
+
+  def destroy
+    branch = Branch.find(params[:id])
+    branch.destroy
+    redirect_to root_path
+  end
   
   private
   def branch_params

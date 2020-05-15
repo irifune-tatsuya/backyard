@@ -43,14 +43,14 @@
     box-sizing: border-box;
 
     .list {
-      height: 60px;
+      height: 80px;
       width: 100%;
       background-color: #ededed;
-      position: relative;
-      padding: 5px 0px 0px 10px;
+      padding: 5px 10px;
       margin-top: 10px;
       box-sizing: border-box;
       border-radius: 10px;
+      position: relative;
 
       &:hover {
         background-color: #fce197;
@@ -59,16 +59,30 @@
       &__link {
         text-decoration: none;
         color: black;
+        &:hover {
+          color: red;
+        }
       }
 
       &__name {
         font-size: 20px;
       }
+
       &__count {
         font-size: 12px;
         position: absolute;
-        left: 125px;
-        bottom: 5px;
+        top: 15px;
+        right: 10px;
+      }
+
+      &__bottom{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        .bottom__btn { 
+          font-size: 14px;
+        }
       }
     }
   }

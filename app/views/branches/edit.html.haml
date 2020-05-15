@@ -1,0 +1,14 @@
+.branch__body
+  #{@branch.name}の編集
+  .branch__body__form
+    = form_for @branch do |f|
+      .field
+        .field-label
+          = f.label "支社名"
+        .field-input
+          = f.text_field :name, autofocus: true
+      .actions
+        = f.submit "登録", class: 'btn'
+      .reset
+        = link_to branch_path(@branch), class: "link", method: :delete do
+          = f.button "支店削除", class: 'btn'
