@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :employees, only: :index
     resources :holidays, only: [:new, :create]
   end
-  resources :holidays, only: :index
+  resources :holidays, only: [:index, :destroy]
   resources :employees, only: [:new, :create, :edit, :update, :destroy]
 end

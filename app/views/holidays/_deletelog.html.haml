@@ -4,13 +4,14 @@
     - @holidays.each do |holiday|
       .log
         .log__top
-          .left
-            .left__text
-              #{holiday.employee.branch.name}：
-            .left__text
-              = holiday.employee.name
-          .created_at
+          .log__top__left
             = holiday.created_at.strftime("%Y年%m月%d日")
+          .log__top__center
+            #{holiday.employee.branch.name}：
+            = holiday.employee.name
+          .log__top__right
+            = link_to holiday_path(holiday.id), class: "link", method: :delete do
+              削除
         .log__low
           .reason 
             = holiday.reason
