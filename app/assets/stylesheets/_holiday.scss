@@ -1,10 +1,10 @@
-.branch {
+.holiday {
   height: 100vh;
   width: 100%;
 
   &__body {
     width: 600px;
-    height: 500px;
+    height: 400px;
     background-color: #4f4f4f;
     margin: 0 auto;
     border-radius: 10px;
@@ -26,17 +26,25 @@
         align-items: center;
         color: #ffffff;
 
+        &-days{
+          display: flex;
+        }
+
         &-label {
           width: 80px;
+
+          &-reason {
+            font-size: 16px;
+          }
         }
 
         &-input {
           margin-left: 15px;
+          margin-right: 30px;
         }
       }
       .btns {
         display: flex;
-        justify-content: space-between;
         margin-top: 30px;
 
         .btn {
@@ -45,6 +53,7 @@
           background-color: #ffffff;
           font-size: 16px;
           border-radius: 10px;
+          margin-right: 30px;
           &:hover {
             background-color: #fce197;
           }

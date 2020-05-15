@@ -1,11 +1,13 @@
-.branch__body
-  新規支社登録
-  .branch__body__form
-    = form_for @branch do |f|
-      .field
-        .field-label
-          = f.label "支社名"
-        .field-input
-          = f.text_field :name, autofocus: true
-      .actions
-        = f.submit "登録", class: 'btn'
+.branch
+  .branch__body
+    .branch__body__name
+      新規支社登録
+    .branch__body__form
+      = form_for @branch do |f|
+        .field
+          .field-label
+            = f.label "支社名"
+          .field-input
+            = f.text_field :name, autofocus: true
+        .btns
+          = f.button "登録", type: :submit, class: 'btn'
