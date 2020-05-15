@@ -11,13 +11,22 @@
     background-color: #efefef;
 
     &__guide {
-      width: 350px;
-      height: 110px;
+      width: 400px;
+      height: 180px;
       background-color: #4f4f4f;
-      color: #fce197;
       margin:30px auto auto;
       padding: 15px;
-      font-size: 12px;
+      border-radius: 10px;
+      &__title {
+        font-size: 20px;
+        color: #fce197;
+      }
+      &__text {
+        font-size: 14px;
+        margin-top: 15px;
+        color: #ffffff;
+        line-height: 25px;
+      }
     }
 
     table {

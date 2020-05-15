@@ -50,6 +50,18 @@
           }
         }
       }
+      .alert {
+        margin: 40px auto;
+        width: 550px;
+        height: 150px;
+        background-color: #fce197;
+        display: flex;
+        border-radius: 10px;
+        align-items: center;
+        &__text{
+          margin: 0 auto;
+        }
+      }
     }
   }
 }

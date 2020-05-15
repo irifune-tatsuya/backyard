@@ -12,4 +12,10 @@
         .btns
           = f.button "登録", type: :submit, class: 'btn'
           = link_to branch_path(@branch), class: "link", method: :delete do
-            = f.button "支店削除", class: 'btn'
+            = f.button "支社削除", class: 'btn'
+        .alert
+          .alert__text
+            支社削除を行った場合、以下のデータも削除されます。
+            %br ●所属する従業員のデータ
+            ●従業員の有給休暇に関する履歴
+            %br くれぐれもご注意下さい!!

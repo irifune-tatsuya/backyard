@@ -2,36 +2,11 @@
   =render 'branches/mainheader'
   .main__body
     .main__body__guide
-      ● 使い方 ●
-      %br ①「支社登録」を実施。
-      ②「社員登録」を実施。
-      %br ③サイドから支社を選択し、社員の有休休暇管理一覧を確認。
-      ④有給消化時は「消化登録」を実施。
-      %br ⑤消化登録の結果は、サイドの「消化履歴」から確認。
-    .main__body__contents
-      .main__body
-        %table 
-          %tr
-            %th
-              氏名
-              = icon('fas', 'cog')
-            %th 入社日
-            %th{id: "short"}
-              付与日
-            %th
-              勤続年数
-            %th{id: "veryshort"}
-            - @employees.each do |employee|
-              %tr
-                %th
-                  = link_to edit_employee_path(employee.id), class: "link" do
-                    = employee.name
-                %th
-                  = employee.hire_date.strftime("%Y/%m/%d")
-                %th{id: "short"}
-                  = employee.calculate_grant_date
-                %th
-                  = employee.calculate_year_of_service
-                %th{id: "veryshort" }
-                  = link_to employee_path(employee.id), class: "link", method: :delete do
-                    削除
+      .main__body__guide__title
+        「Backyard」の使い方
+      .main__body__guide__text
+        ①「支社登録」を実施。
+        %br ②「社員登録」を実施。
+        ③サイドから支社を選択し、社員の有休休暇管理一覧を確認。
+        %br ④有給消化時は「有休登録」を実施。
+        ⑤登録結果は、サイドの「付与または消化の履歴」から確認。
