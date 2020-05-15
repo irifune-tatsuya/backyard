@@ -18,7 +18,7 @@
             .field-label
               = f.label "入社日"
             .field-input
-              = f.date_select :hire_date
+              != sprintf(f.date_select(:hire_date, prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1975, date_separator:'%s'),'年','月')+'日'
           .field
             .field-label
               = f.label "所属支店"
