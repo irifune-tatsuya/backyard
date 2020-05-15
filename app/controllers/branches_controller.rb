@@ -1,7 +1,7 @@
 class BranchesController < ApplicationController
   
   def index
-    @branch = Branch.all
+    @employees = Employee.where(branch_id: :nil)
   end
 
   def new

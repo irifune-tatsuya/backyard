@@ -3,7 +3,7 @@ class Employee < ApplicationRecord
   validates :hire_date, presence: true
 
   belongs_to :branch
-  has_many :holidays
+  has_many :holidays, dependent: :destroy
 
   def calculate_grant_date
     grant_day = hire_date >> 6
