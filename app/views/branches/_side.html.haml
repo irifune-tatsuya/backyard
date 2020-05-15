@@ -9,17 +9,22 @@
   .side__lists
     - current_user.branches.each do |branch|
       .list
-        = link_to branch_employees_path(branch), class: "list__link" do
-          .list__name
-            = branch.name 
-          .list__count
-            %span 従業員：
-            = branch.employees.count
-            %span 名
-      .delete
-        = link_to new_branch_holiday_path(branch), class: "list__link" do
-          消化登録
-  .side__nav
+        .list__top
+          = link_to branch_employees_path(branch), class: "list__link" do
+            .list__name
+              = branch.name 
+            .list__count
+              %span 従業員：
+              = branch.employees.count
+              %span 名
+        .list__bottom
+          .bottom__btn
+            = link_to edit_branch_path(branch.id), class: "list__link" do
+              支店編集/削除
+          .bottom__btn
+            = link_to new_branch_holiday_path(branch), class: "list__link" do
+              有休登録
+  .side__nav 
     .delete
       = link_to holidays_path, class: "delete__link" do
         消化履歴
