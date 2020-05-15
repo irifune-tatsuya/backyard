@@ -1,11 +1,7 @@
 .side
-  .side__header
-    %form.side__header__content
-      %input{type: "text", placeholder: "社員の検索", class: "text"}
-      %label{class: "btn"}
-        %input{type: "submit", class: "btn--icon"}
-        = icon('fas', 'search')
-    %end
+  .side__logo
+    = link_to root_path, class: "side__logo__link" do
+      || Backyard ||
   .side__lists
     - current_user.branches.each do |branch|
       .list
