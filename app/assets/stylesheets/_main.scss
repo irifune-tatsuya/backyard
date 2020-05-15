@@ -6,7 +6,7 @@
     height: calc(100vh - 60px);
     width: 100%;
     overflow: auto;
-    padding: 5px;
+    padding: 10px;
     box-sizing: border-box;
     background-color: #efefef;
 
@@ -33,6 +33,7 @@
       table-layout: fixed;
       min-width: 100%;
       background-color: #ffffff;
+      margin-top: 5px;
 
       tr {
         width: 120px;

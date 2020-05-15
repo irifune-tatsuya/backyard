@@ -1,11 +1,10 @@
 .main
   =render 'branches/mainheader'
   .main__body
+    社員データの編集は「名前」をクリック、削除は右端です。
     %table 
       %tr
-        %th
-          氏名
-          = icon('fas', 'cog')
+        %th 名前
         %th 入社日
         %th{id: "short"}
           付与日
