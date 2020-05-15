@@ -2,6 +2,8 @@
   #{@branch_name}社員の有給消化登録
   .holiday__body__form
     = form_for @holiday, url: branch_holidays_path do |f|
+      .reset
+        = f.button "リセット", type: :reset, class: 'btn'
       .field
         .field-label
           = f.label "社員名"
@@ -11,12 +13,12 @@
         .field-label
           = f.label "付与日数"
         .field-input
-          = f.number_field :add_day, max: "10", min: "0"
+          = f.number_field :add_day, max: "50", min: "1"
       .field
         .field-label
           = f.label "消化日数"
         .field-input
-          = f.number_field :delete_day, max: "10", min: "0"
+          = f.number_field :delete_day, max: "50", min: "1"
       .field
         .field-label
           = f.label "付与または消化理由"

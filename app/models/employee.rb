@@ -21,7 +21,7 @@ class Employee < ApplicationRecord
     "#{year}年#{month}ヵ月"
   end
 
-  def total_delete_day
+  def range_to_add_or_delete
     grant_day = hire_date >> 6
     month = grant_day.month
     day = grant_day.mday
@@ -34,22 +34,20 @@ class Employee < ApplicationRecord
     else
       grant_date_this_year
     end
-    range_to_delete = holidays.where(created_at: grant_date_this_year..Date.tomorrow)
-    range_to_delete.sum(:delete_day)
+    holidays.where(created_at: grant_date_this_year..Date.tomorrow)
   end
 
-  def last_add_day
-    if holidays.where.not(add_day: nil).present?
-      all_add_day = holidays.where.not(add_day: nil).pluck(:add_day)
-      all_add_day.last
-    else
-      0
-    end
+  def total_delete_day
+    total_delete_day = range_to_add_or_delete.sum(:delete_day)
+  end
+
+  def total_add_day
+    total_add_day = range_to_add_or_delete.sum(:add_day)
   end
 
   def calculate_remaining_days
     a = total_delete_day
-    b = last_add_day
+    b = total_add_day
     b - a
   end
 
