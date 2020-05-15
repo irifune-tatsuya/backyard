@@ -18,16 +18,20 @@
       justify-content: space-between;
       font-size: 12px;
       color: #4f4f4f;
-
-      .left {
-        display: flex;
-        &__text {
-          font-size: 12px;
-          color: #4f4f4f;
+      &__right {
+        font-size: 14px;
+        &:hover {
+          color: red;
+        }
+      }
+      .link {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          color: red;
         }
       }
     }
-
     &__low {
       display: flex;
       justify-content: space-between;

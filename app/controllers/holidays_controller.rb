@@ -15,6 +15,12 @@ class HolidaysController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    holiday = Holiday.find(params[:id])
+    holiday.destroy
+    redirect_to holidays_path
+  end
+
   private
   def holiday_params
     params.require(:holiday).permit(:add_day, :delete_day, :reason, :employee_id).merge(user_id: current_user.id)
