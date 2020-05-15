@@ -59,5 +59,4 @@ class Employee < ApplicationRecord
       "未消化"
     end
   end
-
 end
