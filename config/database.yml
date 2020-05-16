@@ -82,3 +82,5 @@ production:
   database: backyard_production
   username: backyard
   password: <%= ENV['BACKYARD_DATABASE_PASSWORD'] %>
+  encoding: unicode
+  pool: 5
