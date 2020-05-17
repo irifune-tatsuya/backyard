@@ -52,11 +52,13 @@ class Employee < ApplicationRecord
   end
 
   def delete_days_alert
-    days = total_delete_day
-    if days >= 5
-      "-"
-    else
+    a = total_delete_day
+    b = total_add_day
+
+    if b >= 10 && a < 5
       "未消化"
+    else
+      "-"
     end
   end
 end
