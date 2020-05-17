@@ -1,6 +1,7 @@
 class Holiday < ApplicationRecord
   validates :reason, presence: true
   validates :add_day, exclusion: { in: [0]}
+  validates :delete_day, exclusion: { in: [0]}
 
   belongs_to :user
   belongs_to :employee
