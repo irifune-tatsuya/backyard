@@ -29,7 +29,7 @@ Workers want to exercise their paid vacation rights. However, if you ask your co
 In addition to what I learned, I wanted to learn how to handle dates and calculations. This is because many applications that are based on services have monetary calculations and date filtering.  
 
 ## Demo
-[Demo1:Top page](https://gyazo.com/cd43cbb1e75637581ebb65366276157a)  
+[Demo1:Top page](https://gyazo.com/654d3a008a243401488c641d5e070bbf)  
   
 [Demo2:Employee registration](https://gyazo.com/c80d4cd30783842cc65b3a8017a30263)  
   
@@ -49,13 +49,13 @@ Checked only on Google chrome.
 5 「消化登録」を行って下さい  
 6 一覧が更新されます  
 
-1 Create an account from "New registration" 
+1 Create an account from "New registration"  
 2 Please register as a branch office  
 3 Please register as an employee  
-4 A list is displayed 
-5 Please perform "digestion registration" 
-6 The list is updated 
-
+4 A list is displayed  
+5 Please perform "digestion registration"  
+6 The list is updated  
+  
 ## Install
 インストールは不要です。  
 [こちら](https://techcamp-backyard.herokuapp.com/)へアクセス!!  
