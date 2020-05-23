@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_050210) do
   end
 
   create_table "holidays", force: :cascade do |t|
+    t.date "registration_date", null: false
     t.integer "add_day"
     t.integer "delete_day"
     t.string "reason", default: "法定付与日のため", null: false

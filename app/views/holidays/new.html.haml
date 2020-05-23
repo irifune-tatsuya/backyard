@@ -9,6 +9,11 @@
               = f.label "社員名"
             .field-input
               = f.collection_select :employee_id, Employee.where(branch_id: @branch), :id, :name, include_blank: "選択して下さい"
+          .field
+            .field-label
+              = f.label "登録日"
+            .field-input
+              != sprintf(f.date_select(:registration_date, prompt:"--", use_month_numbers:true, start_year:Date.today.year, end_year:Date.today.year+1, date_separator:'%s'),'年','月')+'日'
           .field-days
             .field
               .field-label
