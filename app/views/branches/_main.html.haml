@@ -27,9 +27,9 @@
             %th
               = employee.hire_date.strftime("%Y/%m/%d")
             %th{id: "short"}
-              = employee.calculate_grant_date
+              = employee.grant_date.strftime("%m/%d")
             %th
-              = employee.calculate_year_of_service
+              = employee.year_of_service
             %th{id: "short"}
               = employee.total_add_day
             %th{id: "short"}

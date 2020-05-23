@@ -5,12 +5,11 @@ class Employee < ApplicationRecord
   belongs_to :branch
   has_many :holidays, dependent: :destroy
 
-  def calculate_grant_date
-    grant_day = hire_date >> 6
-    grant_day.strftime("%m/%d")
+  def grant_date
+    hire_date >> 6
   end
 
-  def calculate_year_of_service
+  def year_of_service
     if Date.today.month - hire_date.month >= 0
       year = Date.today.year - hire_date.year
       month = Date.today.month - hire_date.month
@@ -21,28 +20,41 @@ class Employee < ApplicationRecord
     "#{year}年#{month}ヵ月"
   end
 
-  def range_to_add_or_delete
-    grant_day = hire_date >> 6
-    month = grant_day.month
-    day = grant_day.mday
+  def range_to_delete
+    month = grant_date.month
+    day = grant_date.mday
     year = Date.today.year
-    grant_date_this_year = Time.local(year, month, day)
+    last_grant_date = Time.local(year, month, day)
 
-    if grant_date_this_year > Date.today
+    if last_grant_date > Date.today
       last_year = year - 1
-      grant_date_this_year = Time.local(last_year, month, day)
-    else
-      grant_date_this_year
+      last_grant_date = Time.local(last_year, month, day)
     end
-    holidays.where(created_at: grant_date_this_year..Date.tomorrow)
+    holidays.where(created_at: last_grant_date..Date.tomorrow)
+  end
+
+  def range_to_add
+    month = grant_date.month
+    day = grant_date.mday
+    year = Date.today.year
+    last_grant_date = Time.local(year, month, day)
+
+    if last_grant_date <= Date.today
+      last_year = year - 1
+      last_grant_date = Time.local(last_year, month, day)
+    else
+      two_years_ago = year - 2
+      last_grant_date = Time.local(two_years_ago, month, day)
+    end
+    holidays.where(created_at: last_grant_date..Date.tomorrow)
   end
 
   def total_delete_day
-    total_delete_day = range_to_add_or_delete.sum(:delete_day)
+    range_to_delete.sum(:delete_day)
   end
 
   def total_add_day
-    total_add_day = range_to_add_or_delete.sum(:add_day)
+    range_to_add.sum(:add_day)
   end
 
   def calculate_remaining_days
