@@ -5,7 +5,8 @@
       .log
         .log__top
           .log__top__left
-            = holiday.created_at.strftime("%Y年%m月%d日")
+            登録日：
+            = holiday.registration_date.strftime("%Y年%m月%d日")
           .log__top__center
             #{holiday.employee.branch.name}：
             = holiday.employee.name

@@ -30,7 +30,7 @@ class Employee < ApplicationRecord
       last_year = year - 1
       last_grant_date = Time.local(last_year, month, day)
     end
-    holidays.where(created_at: last_grant_date..Date.tomorrow)
+    holidays.where(registration_date: last_grant_date..Date.tomorrow)
   end
 
   def range_to_add
@@ -46,7 +46,7 @@ class Employee < ApplicationRecord
       two_years_ago = year - 2
       last_grant_date = Time.local(two_years_ago, month, day)
     end
-    holidays.where(created_at: last_grant_date..Date.tomorrow)
+    holidays.where(registration_date: last_grant_date..Date.tomorrow)
   end
 
   def total_delete_day

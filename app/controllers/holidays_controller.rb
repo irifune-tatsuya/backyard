@@ -23,6 +23,6 @@ class HolidaysController < ApplicationController
 
   private
   def holiday_params
-    params.require(:holiday).permit(:add_day, :delete_day, :reason, :employee_id).merge(user_id: current_user.id)
+    params.require(:holiday).permit(:add_day, :delete_day, :reason, :registration_date,:employee_id).merge(user_id: current_user.id)
   end
 end
