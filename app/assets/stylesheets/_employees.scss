@@ -1,52 +1,64 @@
 .employee {
   height: 100vh;
   width: 100%;
+  padding: 50px;
 
   &__body {
-    width: 600px;
-    height: 500px;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
     background-color: #4f4f4f;
     margin: 0 auto;
     border-radius: 10px;
 
-    &__name {
-      height: 60px;
-      font-size: 25px;
+    &__title {
+      font-size: 20px;
       color: #fce197;
       text-align: center;
-      line-height: 60px;
-      margin: 20px auto;
     }
 
     &__form {
-      font-size: 16px;
-      padding: 30px;
-      .field{
-        display: flex;
-        align-items: center;
-        color: #ffffff;
+      padding-left: 60px;
 
-        &-label {
-          width: 80px;
-        }
+      .field{
+        color: #ffffff;
+        margin-top: 20px;
 
         &-input {
-          margin-left: 15px;
+          display: flex;
+        }
+
+        #employee_name, #employee_employment_status, #employee_branch_id{
+          display: block;
+          height: 40px;
+          padding-left: 10px;
+          width: 100%;
+          max-width: 330px;
+        }
+        #employee_hire_date_1i{
+          display: block;
+          height: 35px;
+          padding-left: 10px;
+          width: 30%;
+        }
+
+        #employee_hire_date_2i, #employee_hire_date_3i{
+          display: block;
+          height: 35px;
+          padding-left: 10px;
+          width: 20%;
         }
       }
-      .btns {
-        display: flex;
-        justify-content: space-between;
+
+      .btn {
+        width: 90px;
+        height: 40px;
+        background-color: #ffffff;
+        font-size: 16px;
+        border-radius: 10px;
         margin-top: 30px;
-        .btn {
-          width: 90px;
-          height: 40px;
-          background-color: #ffffff;
-          font-size: 16px;
-          border-radius: 10px;
-          &:hover {
-            background-color: #fce197;
-          }
+        &:hover {
+          background-color: #fce197;
         }
       }
     }

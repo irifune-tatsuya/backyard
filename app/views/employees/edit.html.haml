@@ -1,28 +1,28 @@
 .employee
   .employee__body
-    .employee__body__name
+    .employee__body__title
       #{@employee.name}さんの編集
-      .employee__body__form
-        = form_for @employee do |f|
-          .field
-            .field-label
-              = f.label "名前"
-            .field-input
-              = f.text_field :name, autofocus: true
-          .field
-            .field-label
-              = f.label "雇用形態"
-            .field-input
-              = f.select :employment_status, [["フルタイム", "1"],["パートタイム", "2"]], include_blank: "選択して下さい"
-          .field
-            .field-label
-              = f.label "入社日"
-            .field-input
-              != sprintf(f.date_select(:hire_date, prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1975, date_separator:'%s'),'年','月')+'日'
-          .field
-            .field-label
-              = f.label "所属支店"
-            .field-input
-              = f.collection_select :branch_id, Branch.where(user_id: current_user.id), :id, :name, include_blank: "選択して下さい"
-          .btns
-            = f.button "登録", type: :submit, class: 'btn'
+    .employee__body__form
+      = form_for @employee do |f|
+        .field
+          .field-label
+            = f.label "名前"
+          .field-input
+            = f.text_field :name, autofocus: true
+        .field
+          .field-label
+            = f.label "雇用形態"
+          .field-input
+            = f.select :employment_status, [["フルタイム", "1"],["パートタイム", "2"]], include_blank: "選択して下さい"
+        .field
+          .field-label
+            = f.label "入社日"
+          .field-input
+            != sprintf(f.date_select(:hire_date, prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1975, date_separator:'%s'),'年','月')+'日'
+        .field
+          .field-label
+            = f.label "所属支店"
+          .field-input
+            = f.collection_select :branch_id, Branch.where(user_id: current_user.id), :id, :name, include_blank: "選択して下さい"
+        .btns
+          = f.button "登録", type: :submit, class: 'btn'

@@ -1,35 +1,35 @@
 .holiday
   .holiday__body
-    .holiday__body__name
+    .holiday__body__title
       #{@branch_name}社員の有給消化登録
-      .holiday__body__form
-        = form_for @holiday, url: branch_holidays_path do |f|
+    .holiday__body__form
+      = form_for @holiday, url: branch_holidays_path do |f|
+        .field
+          .field-label
+            = f.label "社員名"
+          .field-input
+            = f.collection_select :employee_id, Employee.where(branch_id: @branch), :id, :name, include_blank: "選択して下さい"
+        .field
+          .field-label
+            = f.label "登録日"
+          .field-input
+            != sprintf(f.date_select(:registration_date, prompt:"--", use_month_numbers:true, start_year:Date.today.year, end_year:Date.today.year+1, date_separator:'%s'),'年','月')+'日'
+        .field-days
           .field
             .field-label
-              = f.label "社員名"
+              = f.label "消化日数"
             .field-input
-              = f.collection_select :employee_id, Employee.where(branch_id: @branch), :id, :name, include_blank: "選択して下さい"
+              = f.number_field :delete_day, max: "50", min: "1"
           .field
             .field-label
-              = f.label "登録日"
+              = f.label "付与日数"
             .field-input
-              != sprintf(f.date_select(:registration_date, prompt:"--", use_month_numbers:true, start_year:Date.today.year, end_year:Date.today.year+1, date_separator:'%s'),'年','月')+'日'
-          .field-days
-            .field
-              .field-label
-                = f.label "消化日数"
-              .field-input
-                = f.number_field :delete_day, max: "50", min: "1"
-            .field
-              .field-label
-                = f.label "付与日数"
-              .field-input
-                = f.number_field :add_day, max: "50", min: "1"
-          .field
-            .field-label-reason
-              = f.label "消化または付与理由"
-            .field-input
-              = f.text_field :reason, autofocus: true
-          .btns
-            = f.button "リセット", type: :reset, class: 'btn'
-            = f.button "登録", type: :submit, class: 'btn'
+              = f.number_field :add_day, max: "50", min: "1"
+        .field
+          .field-label-reason
+            = f.label "消化または付与理由"
+          .field-input
+            = f.text_field :reason, autofocus: true
+        .btns
+          = f.button "リセット", type: :reset, class: 'btn'
+          = f.button "登録", type: :submit, class: 'btn'
