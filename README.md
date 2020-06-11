@@ -1,6 +1,6 @@
 # README
-
 「Backyard」有給休暇管理ツール
+![title_backyard](https://user-images.githubusercontent.com/64057202/84333451-be241280-abca-11ea-8039-5738c8947b77.png)
 ===========================
 ## Overview  
 このアプリケーションは、ブラウザ上で有給休暇の管理を行うツールです。TECHCAMP75期の入船達也が、個人アプリ開発のカリキュラムで制作しました。未完成です。  
