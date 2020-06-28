@@ -1,7 +1,8 @@
 class BranchesController < ApplicationController
+
+  before_action :set_branch, only: [:edit, :update, :destroy]
   
   def index
-    @employees = Employee.where(branch_id: :nil)
   end
 
   def new
@@ -9,24 +10,31 @@ class BranchesController < ApplicationController
   end
 
   def create
-    Branch.create(branch_params)
-    redirect_to root_path
+    branch = Branch.new(branch_params)
+    if branch.save
+      redirect_to root_path
+    else
+      @branch = Branch.new
+      render :new
+    end
   end
 
   def edit
-    @branch = Branch.find(params[:id])
   end
 
   def update
-    branch = Branch.find(params[:id])
-    branch.update(branch_params)
-    redirect_to root_path
+    if @branch.update(branch_params)
+      redirect_to root_path
+    else
+      @branch = Branch.find(params[:id])
+      render :edit
+    end
   end
 
   def destroy
-    branch = Branch.find(params[:id])
-    branch.destroy
-    redirect_to root_path
+    if @branch.destroy
+      redirect_to root_path
+    end
   end
   
   private
@@ -34,4 +42,7 @@ class BranchesController < ApplicationController
     params.require(:branch).permit(:name).merge(user_id: current_user.id)
   end
 
+  def set_branch
+    @branch = Branch.find(params[:id])
+  end
 end
