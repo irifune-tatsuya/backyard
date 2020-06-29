@@ -26,7 +26,7 @@ class BranchesController < ApplicationController
     if @branch.update(branch_params)
       redirect_to root_path
     else
-      @branch = Branch.find(params[:id])
+      set_branch
       render :edit
     end
   end
@@ -34,6 +34,9 @@ class BranchesController < ApplicationController
   def destroy
     if @branch.destroy
       redirect_to root_path
+    else
+      set_branch
+      render :edit
     end
   end
   

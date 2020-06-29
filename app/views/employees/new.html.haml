@@ -23,6 +23,6 @@
           .field-label
             = f.label "所属支店"
           .field-input
-            = f.collection_select :branch_id, Branch.where(user_id: current_user.id), :id, :name, include_blank: "選択して下さい"
+            = f.collection_select :branch_id, @branch, :id, :name, include_blank: "選択して下さい"
         .btns
           = f.button "登録", type: :submit, class: 'btn'

@@ -1,14 +1,14 @@
 .holiday
   .holiday__body
     .holiday__body__title
-      #{@branch_name}社員の有給消化登録
+      #{@branch.name}社員の有給消化登録
     .holiday__body__form
       = form_for @holiday, url: branch_holidays_path do |f|
         .field
           .field-label
             = f.label "社員名"
           .field-input
-            = f.collection_select :employee_id, Employee.where(branch_id: @branch), :id, :name, include_blank: "選択して下さい"
+            = f.collection_select :employee_id, @branch.employees, :id, :name, include_blank: "選択して下さい"
         .field
           .field-label
             = f.label "登録日"
