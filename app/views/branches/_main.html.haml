@@ -1,7 +1,8 @@
 .main
   =render 'branches/mainheader'
   .main__body
-    社員データの編集は「名前」をクリック、削除は右端です。
+    %h2 #{@branch.name}の有給休暇管理表
+    %p 社員データの編集は「名前」をクリック、削除は右端です。
     %table{class: "table table-bordered table-hover table-responsive"}
       %tr
         %th 名前
@@ -16,7 +17,7 @@
           消化日数
         %th{id: "short"}
           残日数
-        %th{id: "short", class: "danger"}
+        %th{id: "short", class: "bgc"}
           5日消化
         %th{id: "veryshort"}
         - @employees.each do |employee|
@@ -36,7 +37,7 @@
               = employee.total_delete_day
             %th{id: "short"}
               = employee.calculate_remaining_days
-            %th{id: "short", class: "danger"}
+            %th{id: "short", class: "bgc"}
               = employee.delete_days_alert
             %th{id: "veryshort" }
               = link_to employee_path(employee.id), class: "link", method: :delete do

@@ -4,6 +4,7 @@ class EmployeesController < ApplicationController
   before_action :set_curent_user_branch, only: [:new, :create, :edit, :update]
 
   def index
+    @branch = Branch.find(params[:branch_id])
     @employees = Employee.where(branch_id: params[:branch_id]).includes(:holidays)
   end
   

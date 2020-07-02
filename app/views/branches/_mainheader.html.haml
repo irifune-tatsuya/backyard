@@ -1,14 +1,17 @@
 .main__header
   .nav
-    .ragistation
-      = link_to new_branch_path, class: "link" do
+    .nav__logo
+      = link_to root_path, class: "logo" do
+        || Backyard ||
+    .nav__ragistation
+      = link_to "#", {class: "btn link", data:{action:'toggle', side:'left'}} do
+        メニュー
+    .nav__ragistation
+      = link_to new_branch_path, class: "btn" do
         支社登録
-    .ragistation
-      = link_to new_employee_path, class: "link" do
+    .nav__ragistation
+      = link_to new_employee_path, class: "btn" do
         社員登録
-    .ragistation
-      = link_to "#", {class: "btn", data:{action:'toggle', side:'left'}} do
-        サイドバー
   .right
     .right__name
       = current_user.name
