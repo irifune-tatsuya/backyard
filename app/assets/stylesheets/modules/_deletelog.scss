@@ -4,10 +4,10 @@
   overflow: auto;
   padding: 5px;
   box-sizing: border-box;
-  background-color: #efefef;
+  background-color: $light_gray;
 
   .log {
-    background-color: #fce197;
+    background-color: $yellow;
     padding: 10px;
     border-radius: 10px;
     width: 400px;
@@ -17,18 +17,18 @@
       display: flex;
       justify-content: space-between;
       font-size: 12px;
-      color: #4f4f4f;
+      color: $gray;
       &__right {
         font-size: 14px;
         &:hover {
-          color: red;
+          color: $red;
         }
       }
       .link {
         text-decoration: none;
-        color: black;
+        color: $black;
         &:hover {
-          color: red;
+          color: $red;
         }
       }
     }

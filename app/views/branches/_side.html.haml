@@ -1,8 +1,8 @@
-.side
-  .side__logo
-    = link_to root_path, class: "side__logo__link" do
+.sidebar.left
+  .sidebar__logo
+    = link_to root_path, class: "sidebar__logo__link" do
       || Backyard ||
-  .side__lists
+  .sidebar__lists
     - current_user.branches.each do |branch|
       .list
         .list__top
@@ -20,7 +20,7 @@
           .bottom__btn
             = link_to new_branch_holiday_path(branch), class: "list__link" do
               有休登録
-  .side__nav 
+  .sidebar__nav 
     .delete
       = link_to holidays_path, class: "delete__link" do
         付与または消化の履歴

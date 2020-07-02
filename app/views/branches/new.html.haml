@@ -6,8 +6,8 @@
       = form_for @branch do |f|
         .field
           .field-label
-            = f.label "支社名"
+            = f.label :name
           .field-input
             = f.text_field :name, autofocus: true
         .btns
-          = f.button "登録", type: :submit, class: 'btn'
+          = f.button "登録", type: :submit, class:"btn btn-warning"

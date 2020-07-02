@@ -2,7 +2,7 @@
   =render 'branches/mainheader'
   .main__body
     社員データの編集は「名前」をクリック、削除は右端です。
-    %table 
+    %table{class: "table table-bordered table-hover table-responsive"}
       %tr
         %th 名前
         %th 入社日
@@ -16,7 +16,7 @@
           消化日数
         %th{id: "short"}
           残日数
-        %th{id: "short", class: "bgc"}
+        %th{id: "short", class: "danger"}
           5日消化
         %th{id: "veryshort"}
         - @employees.each do |employee|
@@ -36,7 +36,7 @@
               = employee.total_delete_day
             %th{id: "short"}
               = employee.calculate_remaining_days
-            %th{id: "short", class: "bgc"}
+            %th{id: "short", class: "danger"}
               = employee.delete_days_alert
             %th{id: "veryshort" }
               = link_to employee_path(employee.id), class: "link", method: :delete do

@@ -6,6 +6,9 @@
     .ragistation
       = link_to new_employee_path, class: "link" do
         社員登録
+    .ragistation
+      = link_to "#", {class: "btn", data:{action:'toggle', side:'left'}} do
+        サイドバー
   .right
     .right__name
       = current_user.name

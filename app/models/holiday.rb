@@ -1,7 +1,7 @@
 class Holiday < ApplicationRecord
   validates :reason, presence: true
-  validates :add_day, exclusion: { in: [0]}
-  validates :delete_day, exclusion: { in: [0]}
+  validates :add_day, :delete_day, exclusion: { in: [0]}
+  validates :add_day, :delete_day, format: {with: /\A[0-9]+\z/, message: "は半角数字で入力して下さい"}
 
   belongs_to :user
   belongs_to :employee

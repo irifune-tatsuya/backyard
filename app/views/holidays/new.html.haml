@@ -6,28 +6,28 @@
       = form_for @holiday, url: branch_holidays_path do |f|
         .field
           .field-label
-            = f.label "社員名"
+            = f.label :employee_id
           .field-input
             = f.collection_select :employee_id, @branch.employees, :id, :name, include_blank: "選択して下さい"
         .field
           .field-label
-            = f.label "登録日"
+            = f.label :registration_date
           .field-input
             != sprintf(f.date_select(:registration_date, prompt:"--", use_month_numbers:true, start_year:Date.today.year, end_year:Date.today.year+1, date_separator:'%s'),'年','月')+'日'
         .field-days
           .field
             .field-label
-              = f.label "消化日数"
+              = f.label :delete_day
             .field-input
               = f.number_field :delete_day, max: "50", min: "1"
           .field
             .field-label
-              = f.label "付与日数"
+              = f.label :add_day
             .field-input
               = f.number_field :add_day, max: "50", min: "1"
         .field
           .field-label-reason
-            = f.label "消化または付与理由"
+            = f.label :reason
           .field-input
             = f.text_field :reason, autofocus: true
         .btns

@@ -9,7 +9,7 @@
         = devise_error_messages!
         .field
           .field-label
-            = f.label "名前"
+            = f.label :name
           .field-input
             = f.text_field :name, autofocus: true
         .field
@@ -19,13 +19,13 @@
             = f.email_field :email
         .field
           .field-label
-            = f.label "パスワード"
+            = f.label :password
             %i (英数字8文字以上)
           .field-input
             = f.password_field :password, autocomplete: "off"
         .field
           .field-label
-            = f.label "パスワードを再入力"
+            = f.label :password_confirmation
           .field-input
             = f.password_field :password_confirmation, autocomplete: "off"
         .actions

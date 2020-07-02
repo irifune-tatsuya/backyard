@@ -1,17 +1,16 @@
-.side {
-  height: 100vh;
-  width: 250px;
-  font-family: "Meiryo";
+.sidebar {
+  position: fixed;
+  background-color: $white;
 
   &__logo {
-    background-color: #4f4f4f;
+    background-color: $gray;
     height: 50px;
     text-align: center;
     line-height: 50px;
 
     &__link {
       font-size: 20px;
-      color: #ffffff;
+      color: $white;
       text-decoration: none;
     }
   }
@@ -25,7 +24,7 @@
     .list {
       height: 70px;
       width: 100%;
-      background-color: #ededed;
+      background-color: $light_gray;
       padding: 5px 10px;
       margin-top: 15px;
       box-sizing: border-box;
@@ -33,14 +32,14 @@
       position: relative;
 
       &:hover {
-        background-color: #fce197;
+        background-color: $yellow;
       }
 
       &__link {
         text-decoration: none;
-        color: black;
+        color: $black;
         &:hover {
-          color: red;
+          color: $red;
         }
       }
 
@@ -67,7 +66,7 @@
     }
   }
   &__nav{
-    background-color: #4f4f4f;
+    background-color: $gray;
     height: 150px;
     padding: 30px 10px 30px 10px;
     box-sizing: border-box;
@@ -75,17 +74,17 @@
     .delete {
       width: 100%;
       height: 40px;
-      background-color: #ffffff;
+      background-color: $white;
       text-align: center;
       line-height: 40px;
       border-radius: 10px;
       &:hover {
-        background-color: #fce197;
+        background-color: $yellow;
       }
       
       &__link {
         text-decoration: none;
-        color: black;
+        color: $black;
       }
     }
     .links {
@@ -97,15 +96,22 @@
       .link {
         width: 110px;
         height: 40px;
-        background-color: #ffffff;
+        background-color: $white;
         line-height: 40px;
         border-radius: 10px;
         text-decoration: none;
-        color: black;
+        color: $black;
         &:hover {
-          background-color: #fce197;
+          background-color: $yellow;
         }
       }
     }
   }
+}
+.sidebar.left {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 250px;
 }

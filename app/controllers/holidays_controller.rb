@@ -13,18 +13,22 @@ class HolidaysController < ApplicationController
   def create
     holiday = Holiday.new(holiday_params)
     if holiday.save
-      redirect_to root_path
+      redirect_to  branch_employees_path(params[:branch_id]), notice: :'有休登録が完了しました'
     else
       @holiday = Holiday.new
       set_branch
+      flash.now[:alert] = '登録できませんでした すべての項目を記入して下さい'
       render :new
     end
   end
 
   def destroy
     holiday = Holiday.find(params[:id])
-    holiday.destroy
-    redirect_to holidays_path
+    if holiday.destroy
+      redirect_to holidays_path, notice: :'有休情報を削除しました'
+    else
+      redirect_to holidays_path, alert: :'有休情報の削除に失敗しました'
+    end
   end
 
   private

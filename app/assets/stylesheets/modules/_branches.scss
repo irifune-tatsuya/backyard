@@ -7,19 +7,19 @@
     width: 100%;
     max-width: 500px;
     padding: 40px;
-    background-color: #4f4f4f;
+    background-color: $gray;
     margin: 0 auto;
     border-radius: 10px;
 
     &__title {
       font-size: 20px;
-      color: #fce197;
+      color: $yellow;
       text-align: center;
     }
 
     &__form {
       .field{
-        color: #ffffff;
+        color: $white;
         margin-top: 20px;
 
         #branch_name{
@@ -38,18 +38,13 @@
         .btn {
           width: 90px;
           height: 40px;
-          background-color: #ffffff;
           font-size: 16px;
-          border-radius: 10px;
-          &:hover {
-            background-color: #fce197;
-          }
         }
       }
       .alert {
         margin: 40px auto;
         height: 200px;
-        background-color: #fce197;
+        background-color: $yellow;
         display: flex;
         border-radius: 10px;
         align-items: center;
