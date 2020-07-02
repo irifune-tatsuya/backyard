@@ -34,12 +34,14 @@
           padding-left: 10px;
           width: 100%;
           max-width: 330px;
+          color: $black;
         }
         #employee_hire_date_1i{
           display: block;
           height: 35px;
           padding-left: 10px;
           width: 30%;
+          color: $black;
         }
 
         #employee_hire_date_2i, #employee_hire_date_3i{
@@ -47,15 +49,11 @@
           height: 35px;
           padding-left: 10px;
           width: 20%;
+          color: $black;
         }
       }
 
       .btn {
-        width: 90px;
-        height: 40px;
-        background-color: $white;
-        font-size: 16px;
-        border-radius: 10px;
         margin-top: 30px;
         &:hover {
           background-color: $yellow;

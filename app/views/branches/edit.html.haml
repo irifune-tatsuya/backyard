@@ -10,9 +10,9 @@
           .field-input
             = f.text_field :name, autofocus: true
         .btns
-          = f.button "登録", type: :submit, class: 'btn'
-          = link_to branch_path(@branch), class: "link", method: :delete do
-            = f.button "支社削除", class: 'btn'
+          = f.button "登録", type: :submit, class: "btn btn-default"
+          = link_to branch_path(@branch), method: :delete do
+            = f.button "支社削除", class: "btn btn-default"
         .alert
           .alert__text
             支社の削除を行う前に社員の所属先を変更して下さい。

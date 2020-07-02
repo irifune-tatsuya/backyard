@@ -40,12 +40,14 @@
           padding-left: 10px;
           width: 100%;
           max-width: 320px;
+          color: $black;
         }
         #holiday_registration_date_1i{
           display: block;
           height: 30px;
           padding-left: 10px;
           width: 30%;
+          color: $black;
         }
 
         #holiday_registration_date_2i, #holiday_registration_date_3i{
@@ -53,13 +55,15 @@
           height: 30px;
           padding-left: 10px;
           width: 20%;
+          color: $black;
         }
 
         #holiday_add_day, #holiday_delete_day {
           display: block;
           height: 30px;
           padding-left: 10px;
-          width: 50px;
+          width: 80px;
+          color: $black;
         }
       }
       .btns {
@@ -67,11 +71,6 @@
         margin-top: 30px;
 
         .btn {
-          width: 90px;
-          height: 40px;
-          background-color: $white;
-          font-size: 16px;
-          border-radius: 10px;
           margin-right: 30px;
           &:hover {
             background-color: $yellow;
